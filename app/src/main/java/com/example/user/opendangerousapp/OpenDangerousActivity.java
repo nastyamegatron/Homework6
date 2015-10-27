@@ -10,18 +10,21 @@ import android.widget.Button;
 
 public class OpenDangerousActivity extends AppCompatActivity {
     Button mBtnDangerous;
+    public static final String ACTION_VIEW = "com.permissions.nastya.ACTION_TEST";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        mBtnDangerous=(Button)findViewById(R.id.dangerous);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_dangerous);
+        mBtnDangerous=(Button)findViewById(R.id.dangerousbtn);
 
         mBtnDangerous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent dangerousIntent = new Intent(Intent.ACTION_VIEW);
+                Intent dangerousIntent = new Intent(ACTION_VIEW);
                 startActivity(dangerousIntent);
             }
         });
